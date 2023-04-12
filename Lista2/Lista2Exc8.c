@@ -2,34 +2,18 @@
 
 int main(void) 
 {
-  float preço=0, venda=0, lucro=0, lucrototal=0, preçototal=0, vendatotal=0;
-  int cont10=0, conta12=0, cont20=0;
-  
-  scanf("%f %f",&preço, &venda);
-  while(preço!=0)
+int f1=0, f2=1, num=0, f3=1;
+
+scanf("%d",&num);
+
+    while (num>=f3)
     {
-      lucro=venda-preço;
-      if(lucro<preço/10)
+      if(f3<num)
       {
-        cont10++;
+        printf("%d ",f3);
       }
-      if(lucro>=preço/10 && lucro<=preço/20)
-      {
-        conta12++;
-      }
-      if(lucro>preço/20)
-      {
-        cont20++;
-      }
-      vendatotal+=venda;
-      preçototal+=preço;
-      lucrototal+=lucro;
-      scanf("%f %f",&preço, &venda);      
+      f3=f1+f2;
+      f1=f2;
+      f2=f3;
     }
-  printf("%d\n",cont10);
-  printf("%d\n",conta12);
-  printf("%d\n",cont20);
-  printf("%.2f\n",vendatotal);
-  printf("%.2f\n",lucrototal);
-  printf("%.2f\n",preçototal);
 }

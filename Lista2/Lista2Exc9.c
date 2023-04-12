@@ -1,36 +1,41 @@
 #include <stdio.h>
-int subtracao(int a,int b,int c){
- return (a+b+c)/3;
-}
-int main(void)
+/*
+aluno: João Vitor Mendes Moreira
+ultima atualização: 11/04/23
+objetivo: receber valores de preço e venda e informar alguns parametros*/
+int main(void) 
 {
- int i, numTermos, num1, num2, num3;
- printf("\nDigite um numero: ");
- scanf("%d", &numTermos);
- num1 = 5;
- num2 = 2;
- num3 = 2;
- num2 = subtracao(num1,num2,num3);
- printf("\nNum3 = %d",num2);
- i = 4;
- while (i <= numTermos)
- {
- num1 += 15;
- printf("\nNum1 = %d", num1);
- i++;
- while(num2 <= 10)
- {
- num2 += 7;
- printf("\nNum2 = %d", num2);
- i--;
- if (i != numTermos)
- {
- num3 *= 4;
- printf("\nNum3 = %d", 
-num3);
- i++;
- }
- }
- }
- return 0;
+  //declaração de variavel
+  float preco=0, venda=0, lucro=0, lucrototal=0, precototal=0, vendatotal=0;
+  int cont10=0, conta12=0, cont20=0;
+  //calculo/raciocinio
+  scanf("%f %f",&preco, &venda);
+  while(preco!=0)
+    {
+      lucro=venda-preco;// dando como exemplo 601-728= 127
+      if(lucro<preco*0.1)// 127<601/10 - 127 < 60,1
+      {
+        cont10++;
+      }
+      if(lucro>=(preco*0.1) && lucro<=(preco*0.2))
+      
+      {
+        conta12++;
+      }
+      if(lucro>preco*0.2)
+      {
+        cont20++;
+      }
+      vendatotal+=venda;
+      precototal+=preco;
+      lucrototal+=lucro;
+      scanf("%f %f",&preco, &venda);      
+    }
+  printf("%d\n",cont10);
+  printf("%d\n",conta12);
+  printf("%d\n",cont20);
+  printf("%.2f\n",precototal);
+  printf("%.2f\n",vendatotal);
+  printf("%.2f\n",lucrototal);
+
 }
